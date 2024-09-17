@@ -117,7 +117,7 @@ export default function ContactPage() {
               <CardContent className="space-y-4">
                 <div className="flex items-center">
                   <Mail className="h-5 w-5 mr-2 text-primary" />
-                  <p>julian@kukiku.com</p>
+                  <p>julian@kukiku.org</p>
                 </div>
                 <div className="flex items-center">
                   <Phone className="h-5 w-5 mr-2 text-primary" />
