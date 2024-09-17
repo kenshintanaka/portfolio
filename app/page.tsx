@@ -98,7 +98,7 @@ export default function Home() {
         <div className="relative z-10 grid gap-12 md:grid-cols-2 items-center">
           <motion.div variants={itemVariants}>
             <h1 className="text-4xl font-bold mb-4">
-              Hello, I'm Julian Maggio
+              Hello, I&apos;m Julian Maggio
             </h1>
             <h2 className="text-2xl font-semibold mb-6 text-primary h-8">
               {typedText}
@@ -201,10 +201,10 @@ export default function Home() {
         animate="visible"
       >
         <motion.h2 variants={itemVariants} className="text-3xl font-bold mb-8">
-          Let's Work Together
+          Let&apos;s Work Together
         </motion.h2>
         <motion.p variants={itemVariants} className="text-lg mb-8">
-          I'm always open to new opportunities and exciting projects. Feel free
+          I&apos;m always open to new opportunities and exciting projects. Feel free
           to reach out!
         </motion.p>
         <motion.div variants={itemVariants}>

@@ -104,7 +104,7 @@ export default function ContactPage() {
       >
         <motion.h1 variants={itemVariants} className="text-4xl font-bold mb-8 text-center">Get in Touch</motion.h1>
         <motion.p variants={itemVariants} className="text-lg text-center mb-12">
-          I'd love to hear from you! Whether you have a project in mind or just want to say hello, feel free to reach out.
+          I&apos;d love to hear from you! Whether you have a project in mind or just want to say hello, feel free to reach out.
         </motion.p>
 
         <div className="grid gap-8 md:grid-cols-2">
@@ -112,20 +112,20 @@ export default function ContactPage() {
             <Card>
               <CardHeader>
                 <CardTitle>Contact Information</CardTitle>
-                <CardDescription>Here's how you can reach me directly</CardDescription>
+                <CardDescription>Here&apos;s how you can reach me directly</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-center">
                   <Mail className="h-5 w-5 mr-2 text-primary" />
-                  <p>john.doe@example.com</p>
+                  <p>julian@kukiku.org</p>
                 </div>
                 <div className="flex items-center">
                   <Phone className="h-5 w-5 mr-2 text-primary" />
-                  <p>+1 (123) 456-7890</p>
+                  <p>shhhh secret</p>
                 </div>
                 <div className="flex items-center">
                   <MapPin className="h-5 w-5 mr-2 text-primary" />
-                  <p>San Francisco, CA</p>
+                  <p>Midtjylland, DK</p>
                 </div>
               </CardContent>
             </Card>
@@ -135,7 +135,7 @@ export default function ContactPage() {
             <Card>
               <CardHeader>
                 <CardTitle>Send a Message</CardTitle>
-                <CardDescription>Fill out the form below and I'll get back to you as soon as possible</CardDescription>
+                <CardDescription>Fill out the form below and I&apos;ll get back to you as soon as possible</CardDescription>
               </CardHeader>
               <CardContent>
                 <Form {...form}>
