@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+
 import { motion } from "framer-motion";
 import {
   Card,
@@ -22,7 +22,6 @@ import {
   MapPin,
   Briefcase,
   Book,
-  Music,
   Palette,
 } from "lucide-react";
 
@@ -106,24 +105,15 @@ export default function About() {
                 <p className="mb-4">
                   With over 5 years of experience in full stack development, I
                   specialize in building scalable web applications using
-                  TypeScript, Next.js, and cloud technologies. I'm passionate
+                  TypeScript, Next.js, and cloud technologies. I&apos;m passionate
                   about clean code, user-centric design, and continuous
                   learning.
                 </p>
                 <h3 className="font-semibold mb-2 flex items-center">
                   <Globe className="w-4 h-4 mr-2" /> Current Focus
                 </h3>
-                <p className="mb-2">
-                  I'm currently pursuing my degree in Computer Science at [Your
-                  University Name], where I'm diving deep into the world of
-                  software engineering and cutting-edge technologies.
-                </p>
                 <p>
-                  Alongside my studies, I'm exploring machine learning
-                  applications in web development and contributing to
-                  open-source projects that promote tech education. My
-                  coursework and personal projects are allowing me to blend
-                  theoretical knowledge with practical, real-world applications.
+                    Yes
                 </p>
               </TabsContent>
               <TabsContent value="skills">
