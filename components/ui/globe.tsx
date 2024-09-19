@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import createGlobe, { COBEOptions } from "cobe";
 import { useSpring } from "react-spring";
 
@@ -23,6 +23,13 @@ const GLOBE_CONFIG: COBEOptions = {
   markers: [{ location: [56.4299503, 10.6746282], size: 0.1 }],
 };
 
+type GlobeState = {
+  phi: number;
+  width: number;
+  height: number;
+  [key: string]: any;
+};
+
 export default function GlobeComponent({
   className,
   config = GLOBE_CONFIG,
@@ -31,7 +38,7 @@ export default function GlobeComponent({
   config?: COBEOptions;
 }) {
   const phi = 4.5;
-  let width = 0;
+  const [width, setWidth] = useState(0);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const pointerInteracting = useRef<number | null>(null);
   const pointerInteractionMovement = useRef(0);
@@ -60,18 +67,20 @@ export default function GlobeComponent({
 
   const onRender = useCallback(
     (state: Record<string, any>) => {
-      state.phi = phi + r.get();
-      state.width = width * 2;
-      state.height = width * 2;
+      const globeState = state as GlobeState;
+      globeState.phi = phi + r.get();
+      globeState.width = width * 2;
+      globeState.height = width * 2;
     },
-    [pointerInteracting, phi, r]
+    [phi, r, width]
   );
+  
 
-  const onResize = () => {
+  const onResize = useCallback(() => {
     if (canvasRef.current) {
-      width = canvasRef.current.offsetWidth;
+      setWidth(canvasRef.current.offsetWidth);
     }
-  };
+  }, []);
 
   useEffect(() => {
     window.addEventListener("resize", onResize);
@@ -86,7 +95,7 @@ export default function GlobeComponent({
 
     setTimeout(() => (canvasRef.current!.style.opacity = "1"));
     return () => globe.destroy();
-  }, []);
+  }, [config, onRender, onResize, width]);
 
   return (
     <div
