@@ -32,7 +32,7 @@ export default function GlobeComponent({
   className?: string;
   config?: COBEOptions;
 }) {
-  let phi = 4.5;
+  const phi = 4.5;
   let width = 0;
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const pointerInteracting = useRef(null);
