@@ -23,7 +23,6 @@ import {
   Book,
   Palette,
 } from "lucide-react";
-import GlobeComponent from "@/components/ui/globe";
 
 export default function About() {
   const skills = [
@@ -186,7 +185,7 @@ export default function About() {
         </Card>
 
         <motion.div
-          className="md:col-span-3 relative" // Adding relative to ensure it remains stable
+          className="md:col-span-3"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -199,12 +198,19 @@ export default function About() {
             </CardHeader>
             <CardContent>
               <motion.div
-                className="bg-muted h-64 w-full flex items-center justify-center rounded-md overflow-hidden relative" // added relative here as well
+                className="bg-muted h-64 flex items-center justify-center rounded-md overflow-hidden"
                 initial={{ scale: 0.8 }}
                 animate={{ scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
               >
-                <GlobeComponent />
+                <motion.p
+                  className="text-muted-foreground"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1 }}
+                >
+                  Globe visualization coming soon
+                </motion.p>
               </motion.div>
             </CardContent>
           </Card>
