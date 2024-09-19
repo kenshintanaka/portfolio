@@ -20,9 +20,7 @@ const GLOBE_CONFIG: COBEOptions = {
   baseColor: [1, 1, 1],
   markerColor: [251 / 255, 100 / 255, 21 / 255],
   glowColor: [1, 1, 1],
-  markers: [
-    { location: [56.4299503, 10.6746282], size: 0.1 },
-  ],
+  markers: [{ location: [56.4299503, 10.6746282], size: 0.1 }],
 };
 
 export default function GlobeComponent({
@@ -35,7 +33,7 @@ export default function GlobeComponent({
   const phi = 4.5;
   let width = 0;
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const pointerInteracting = useRef(null);
+  const pointerInteracting = useRef<number | null>(null);
   const pointerInteractionMovement = useRef(0);
   const [{ r }, api] = useSpring(() => ({
     r: 0,
@@ -47,12 +45,12 @@ export default function GlobeComponent({
     },
   }));
 
-  const updatePointerInteraction = (value: any) => {
+  const updatePointerInteraction = (value: number | null) => {
     pointerInteracting.current = value;
     canvasRef.current!.style.cursor = value ? "grabbing" : "grab";
   };
 
-  const updateMovement = (clientX: any) => {
+  const updateMovement = (clientX: number) => {
     if (pointerInteracting.current !== null) {
       const delta = clientX - pointerInteracting.current;
       pointerInteractionMovement.current = delta;
@@ -66,7 +64,7 @@ export default function GlobeComponent({
       state.width = width * 2;
       state.height = width * 2;
     },
-    [pointerInteracting, phi, r],
+    [pointerInteracting, phi, r]
   );
 
   const onResize = () => {
@@ -94,17 +92,17 @@ export default function GlobeComponent({
     <div
       className={cn(
         "absolute inset-0 mx-auto aspect-[1/1] w-full max-w-[600px]",
-        className,
+        className
       )}
     >
       <canvas
         className={cn(
-          "h-full w-full opacity-0 transition-opacity duration-500 [contain:layout_paint_size]",
+          "h-full w-full opacity-0 transition-opacity duration-500 [contain:layout_paint_size]"
         )}
         ref={canvasRef}
         onPointerDown={(e) =>
           updatePointerInteraction(
-            e.clientX - pointerInteractionMovement.current,
+            e.clientX - pointerInteractionMovement.current
           )
         }
         onPointerUp={() => updatePointerInteraction(null)}
