@@ -1,6 +1,5 @@
 "use client";
 
-
 import { motion } from "framer-motion";
 import {
   Card,
@@ -24,6 +23,7 @@ import {
   Book,
   Palette,
 } from "lucide-react";
+import GlobeComponent from "@/components/ui/globe";
 
 export default function About() {
   const skills = [
@@ -105,16 +105,14 @@ export default function About() {
                 <p className="mb-4">
                   With over 5 years of experience in full stack development, I
                   specialize in building scalable web applications using
-                  TypeScript, Next.js, and cloud technologies. I&apos;m passionate
-                  about clean code, user-centric design, and continuous
-                  learning.
+                  TypeScript, Next.js, and cloud technologies. I&apos;m
+                  passionate about clean code, user-centric design, and
+                  continuous learning.
                 </p>
                 <h3 className="font-semibold mb-2 flex items-center">
                   <Globe className="w-4 h-4 mr-2" /> Current Focus
                 </h3>
-                <p>
-                    Yes
-                </p>
+                <p>Yes</p>
               </TabsContent>
               <TabsContent value="skills">
                 <h3 className="font-semibold mb-2 flex items-center">
@@ -188,7 +186,7 @@ export default function About() {
         </Card>
 
         <motion.div
-          className="md:col-span-3"
+          className="md:col-span-3 relative" // Adding relative to ensure it remains stable
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -201,19 +199,12 @@ export default function About() {
             </CardHeader>
             <CardContent>
               <motion.div
-                className="bg-muted h-64 flex items-center justify-center rounded-md overflow-hidden"
+                className="bg-muted h-64 w-full flex items-center justify-center rounded-md overflow-hidden relative" // added relative here as well
                 initial={{ scale: 0.8 }}
                 animate={{ scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
               >
-                <motion.p
-                  className="text-muted-foreground"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 1 }}
-                >
-                  Globe visualization coming soon
-                </motion.p>
+                <GlobeComponent />
               </motion.div>
             </CardContent>
           </Card>
