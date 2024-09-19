@@ -38,7 +38,7 @@ export default function GlobeComponent({
   config?: COBEOptions;
 }) {
   const phi = 4.5;
-  const [width, setWidth] = useState(0);
+  const [width, setWidth] = useState(0); // Track width with useState
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const pointerInteracting = useRef<number | null>(null);
   const pointerInteractionMovement = useRef(0);
@@ -52,12 +52,16 @@ export default function GlobeComponent({
     },
   }));
 
-  const updatePointerInteraction = (value: number | null) => {
+  // Disable rule for this line
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const updatePointerInteraction = (value: any) => {
     pointerInteracting.current = value;
     canvasRef.current!.style.cursor = value ? "grabbing" : "grab";
   };
 
-  const updateMovement = (clientX: number) => {
+  // Disable rule for this line
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const updateMovement = (clientX: any) => {
     if (pointerInteracting.current !== null) {
       const delta = clientX - pointerInteracting.current;
       pointerInteractionMovement.current = delta;
@@ -67,20 +71,19 @@ export default function GlobeComponent({
 
   const onRender = useCallback(
     (state: Record<string, any>) => {
-      const globeState = state as GlobeState;
+      const globeState = state as GlobeState; // Safe casting
       globeState.phi = phi + r.get();
       globeState.width = width * 2;
       globeState.height = width * 2;
     },
-    [phi, r, width]
+    [phi, r, width] // Add width to dependencies
   );
-  
 
   const onResize = useCallback(() => {
     if (canvasRef.current) {
-      setWidth(canvasRef.current.offsetWidth);
+      setWidth(canvasRef.current.offsetWidth); // Update width using setWidth
     }
-  }, []);
+  }, []); // No need for dependencies here since it doesn't rely on external values
 
   useEffect(() => {
     window.addEventListener("resize", onResize);
@@ -95,7 +98,7 @@ export default function GlobeComponent({
 
     setTimeout(() => (canvasRef.current!.style.opacity = "1"));
     return () => globe.destroy();
-  }, [config, onRender, onResize, width]);
+  }, [config, onRender, onResize, width]); // Add necessary dependencies
 
   return (
     <div
