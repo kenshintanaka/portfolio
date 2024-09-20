@@ -34,7 +34,7 @@ export function ThemeToggle() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="icon" aria-label="Toggle theme">
-          {getIcon(theme)}
+          {getIcon(theme || 'system')}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
