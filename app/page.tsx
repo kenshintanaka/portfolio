@@ -3,11 +3,11 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion, useMotionValue } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight, ExternalLink, Github } from "lucide-react";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -19,6 +19,10 @@ export default function Home() {
   const backgroundRef = useRef<HTMLDivElement>(null);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
+
+  const springConfig = { damping: 25, stiffness: 700 };
+  const mouseXSpring = useSpring(mouseX, springConfig);
+  const mouseYSpring = useSpring(mouseY, springConfig);
 
   useEffect(() => {
     let i = 0;
@@ -73,6 +77,31 @@ export default function Home() {
     },
   };
 
+  const projects = [
+    {
+      title: "AniVue",
+      description:
+        "A sleek anime streaming platform with a vast library and personalized recommendations",
+      tags: ["Next.js", "Vercel", "Framer Motion", "shadcn/ui"],
+      siteUrl: "https://www.anivue.com",
+    },
+    {
+      title: "ComicSphere",
+      description:
+        "A feature-rich SaaS for comic creators to host, manage, and monetize their digital comics",
+      tags: ["Next.js", "Vercel", "Framer Motion", "shadcn/ui"],
+      siteUrl: "https://www.comicsphere.org",
+    },
+    {
+      title: "Portfolio Website",
+      description:
+        "An interactive showcase of my projects and skills, featuring smooth animations and a modern design",
+      tags: ["Next.js", "Vercel", "Framer Motion", "shadcn/ui"],
+      siteUrl: "https://www.julianmaggio.me",
+      githubUrl: "https://github.com/julianmaggio/portfolio",
+    },
+  ];
+
   return (
     <div className="container mx-auto px-4 py-16">
       <motion.div
@@ -86,8 +115,8 @@ export default function Home() {
           <motion.div
             className="absolute inset-0 bg-gradient-to-br from-primary/40 to-secondary/40 rounded-full blur-3xl"
             style={{
-              x: mouseX,
-              y: mouseY,
+              x: mouseXSpring,
+              y: mouseYSpring,
               width: 400,
               height: 400,
               translateX: "-50%",
@@ -125,7 +154,7 @@ export default function Home() {
             )}
             <Image
               src="https://o9ybdhbfta3tzvhp.public.blob.vercel-storage.com/placeholder-Z5R6NeRRilV9FltJrjP1InQd4k5GXr.svg"
-              alt="John Doe"
+              alt="Julian Maggio"
               layout="fill"
               objectFit="cover"
               className="rounded-lg"
@@ -148,33 +177,14 @@ export default function Home() {
           Featured Projects
         </motion.h2>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {[
-            {
-              title: "AniVue",
-              description:
-                "A sleek anime streaming platform with a vast library and personalized recommendations",
-              tags: ["Next.js", "Vercel", "Framer Motion", "shadcn/ui"],
-            },
-            {
-              title: "ComicSphere",
-              description:
-                "A feature-rich SaaS for comic creators to host, manage, and monetize their digital comics",
-              tags: ["Next.js", "Vercel", "Framer Motion", "shadcn/ui"],
-            },
-            {
-              title: "Portfolio Website",
-              description:
-                "An interactive showcase of my projects and skills, featuring smooth animations and a modern design",
-              tags: ["Next.js", "Vercel", "Framer Motion", "shadcn/ui"],
-            },
-          ].map((project, index) => (
+          {projects.map((project, index) => (
             <motion.div key={index} variants={itemVariants}>
-              <Card>
-                <CardContent className="p-6">
+              <Card className="h-full flex flex-col">
+                <CardContent className="p-6 flex flex-col flex-grow">
                   <h3 className="text-xl font-semibold mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-muted-foreground mb-4">
+                  <p className="text-muted-foreground mb-4 flex-grow">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
@@ -184,9 +194,24 @@ export default function Home() {
                       </Badge>
                     ))}
                   </div>
-                  <Button variant="outline" className="w-full">
-                    View Project <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
+                  <div className="flex gap-2">
+                    {project.siteUrl && (
+                      <Button variant="outline" className="flex-1" asChild>
+                        <Link href={project.siteUrl} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="mr-2 h-4 w-4" />
+                          View Site
+                        </Link>
+                      </Button>
+                    )}
+                    {project.githubUrl && (
+                      <Button variant="outline" className="flex-1" asChild>
+                        <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                          <Github className="mr-2 h-4 w-4" />
+                          GitHub
+                        </Link>
+                      </Button>
+                    )}
+                  </div>
                 </CardContent>
               </Card>
             </motion.div>

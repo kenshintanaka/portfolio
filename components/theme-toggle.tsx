@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
 import { Button } from '@/components/ui/button'
 import { Moon, Sun, Monitor, Smartphone } from 'lucide-react'
 import { useMediaQuery } from '@/hooks/use-media-query'
@@ -19,20 +20,10 @@ export function ThemeToggle() {
     return null
   }
 
-  const toggleTheme = () => {
-    if (theme === 'system') {
-      setTheme('light')
-    } else if (theme === 'light') {
-      setTheme('dark')
-    } else {
-      setTheme('system')
-    }
-  }
-
-  const getIcon = () => {
-    if (theme === 'system') {
+  const getIcon = (value: string) => {
+    if (value === 'system') {
       return isMobileOrTablet ? <Smartphone className="h-5 w-5" /> : <Monitor className="h-5 w-5" />
-    } else if (theme === 'light') {
+    } else if (value === 'light') {
       return <Sun className="h-5 w-5" />
     } else {
       return <Moon className="h-5 w-5" />
@@ -40,13 +31,26 @@ export function ThemeToggle() {
   }
 
   return (
-    <Button
-      variant="ghost"
-      size="icon"
-      onClick={toggleTheme}
-      aria-label={`Switch to ${theme === 'system' ? 'light' : theme === 'light' ? 'dark' : 'system'} theme`}
-    >
-      {getIcon()}
-    </Button>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="ghost" size="icon" aria-label="Toggle theme">
+          {getIcon(theme)}
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
+        <DropdownMenuItem onClick={() => setTheme('light')}>
+          {getIcon('light')}
+          <span className="ml-2">Light</span>
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setTheme('dark')}>
+          {getIcon('dark')}
+          <span className="ml-2">Dark</span>
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setTheme('system')}>
+          {getIcon('system')}
+          <span className="ml-2">System</span>
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
   )
 }
