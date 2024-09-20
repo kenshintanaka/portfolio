@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 
 // Flag to enable/disable contact requests
-const ENABLE_CONTACT_REQUESTS = false
+const ENABLE_CONTACT_REQUESTS = true
 export async function POST(request: Request) {
   if (!ENABLE_CONTACT_REQUESTS) {
     return NextResponse.json(
