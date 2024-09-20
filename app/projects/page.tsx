@@ -157,7 +157,7 @@ export default function Projects() {
             },
           }}
         >
-          {filteredProjects.map((project, index) => (
+          {filteredProjects.map((project) => (
             <MotionCard 
               key={project.title}
               className="flex flex-col"

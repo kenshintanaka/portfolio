@@ -6,15 +6,8 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { Menu, X, Globe } from "lucide-react";
+import { Menu, X, } from "lucide-react";
 import { useMediaQuery } from "@/hooks/use-media-query";
-import Flag from "react-flagpack";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { LanguageSelector } from "./language-selector";
 
 const navItems = [
@@ -25,15 +18,8 @@ const navItems = [
   { name: "Contact", path: "/contact" },
 ];
 
-const languages = [
-  { code: "US", name: "English" },
-  { code: "DK", name: "Dansk" },
-  { code: "DE", name: "Deutsch" },
-];
-
 export default function Navbar() {
   const [activeItem, setActiveItem] = useState("/");
-  const [currentLanguage, setCurrentLanguage] = useState("en");
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const isMobile = useMediaQuery("(max-width: 768px)");
