@@ -10,7 +10,6 @@ import {
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import { Globe } from "lucide-react";
-import Flag from "react-world-flags";
 
 interface Language {
   code: string;
@@ -65,7 +64,6 @@ export function LanguageSelector() {
             onClick={() => handleLanguageChange(lang.code)}
             className={selectedLanguage === lang.code ? "font-bold" : ""}
           >
-            <Flag code={lang.flag} className="mr-2 h-4 w-4 rounded-sm" />
             {lang.label}
           </DropdownMenuItem>
         ))}
