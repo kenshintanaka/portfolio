@@ -10,6 +10,9 @@ import { Input } from '@/components/ui/input'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { ExternalLink, Github } from 'lucide-react'
+import { time } from 'console'
+import { title } from 'process'
+import { Description } from '@radix-ui/react-toast'
 
 const projects = [
   {
@@ -47,6 +50,13 @@ const projects = [
     tags: ['Next.js', 'Vercel', 'Framer Motion', 'shadcn/ui'],
     siteUrl: 'https://www.julianmaggio.me',
     githubUrl: 'https://github.com/julianmaggio/portfolio'
+  },
+  {
+    title: 'Roblox-TS Package Finder',
+    Description: 'Discover and explore packages from the @rbxts scope',
+    image: 'https://o9ybdhbfta3tzvhp.public.blob.vercel-storage.com/yes/www.rbxts-npm.com_-f2ibhe5m2ZVGaeeQcAgtxHEhG5KTJV.png',
+    tags: ['Next.js', 'Vercel', 'Roblox', 'shadcn/ui', 'Roblox-TS'],
+    siteUrl: 'https://www.rbxts-npm.com/',
   },
 ]
 
