@@ -10,9 +10,6 @@ import { Input } from '@/components/ui/input'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { ExternalLink, Github } from 'lucide-react'
-import { time } from 'console'
-import { title } from 'process'
-import { Description } from '@radix-ui/react-toast'
 
 const projects = [
   {
