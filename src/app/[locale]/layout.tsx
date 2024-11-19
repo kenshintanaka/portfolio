@@ -75,8 +75,8 @@ export default async function RootLayout({
     notFound();
   }
 
-  // Fetch messages for the locale
-  const messages = await getMessages(locale);
+// If getMessages expects an object like { locale: string }
+const messages = await getMessages({ locale });
 
   return (
     <html lang={locale} suppressHydrationWarning>
