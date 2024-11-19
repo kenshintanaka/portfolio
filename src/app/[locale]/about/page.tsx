@@ -8,50 +8,36 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Badge as BadgeComponent } from "@/components/ui/badge";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Progress } from "@/components/ui/progress";
-import {
-  CalendarDays,
-  Code2,
-  Globe,
-  GraduationCap,
-  Laptop,
-  MapPin,
-  Briefcase,
-  Book,
-  Palette,
-} from "lucide-react";
+import { MapPin, Briefcase, Globe, Book, Palette, GraduationCap, Code2, LucideBadge } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 const MotionCard = motion(Card);
 
 export default function About() {
-  const skills = [
-    { name: "React", level: 90 },
-    { name: "Next.js", level: 85 },
-    { name: "TypeScript", level: 80 },
-    { name: "Javascript", level: 80 },
-    { name: "Python", level: 75 },
-    { name: "Html", level: 70 },
-    { name: "CSS", level: 70 },
-    { name: "PHP", level: 65 },
+  const t = useTranslations("about")
+  const interests = [t("interests.content.interest1"), t("interests.content.interest2"), t("interests.content.interest3")];
+  const hobbies = [t("hobbies.content.hobby1"), t("hobbies.content.hobby2"), t("hobbies.content.hobby3")];
+  const funFacts = [
+    t("fun-facts.content.fact1")
   ];
-
-  const certifications = [{ name: "None as of yet", year: "Present" }];
-
-  const languages = [
-    { name: "Danish", level: "Native", flag: "🇩🇰" },
-    { name: "English", level: "Native", flag: "🇬🇧" },
-    { name: "German", level: "Intermediate", flag: "🇩🇪" },
-    { name: "Japanese", level: "Beginner", flag: "🇯🇵" },
-    { name: "Chinese (Mandarin)", level: "Beginner", flag: "🇨🇳" },
-    { name: "Taiwanese (Hokkien)", level: "Beginner", flag: "🇹🇼" },
-    { name: "Cantonese", level: "Beginner", flag: "🇭🇰" },
+  const personalPhilosophy = t("philosophy.content");
+  const faqs = [
+    {
+      question: t("faq.content.faq1.question"),
+      answer: t("faq.content.faq1.answer"),
+    },
+    {
+      question: t("faq.content.faq2.question"),
+      answer: t("faq.content.faq2.answer"),
+    },
+    {
+      question: t("faq.content.faq3.question"),
+      answer: t("faq.content.faq3.answer"),
+    },
   ];
-
-  const interests = ["Web Development", "AI", "Cloud Computing"];
-
-  const hobbies = ["Travel", "Cooking", "Programming"];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -84,7 +70,7 @@ export default function About() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        About Me
+        {t("title")}
       </motion.h1>
       <motion.div
         className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
@@ -100,24 +86,24 @@ export default function About() {
             </Avatar>
             <CardTitle className="text-center mt-4">Julian Maggio</CardTitle>
             <CardDescription className="text-center">
-              Full Stack Developer
+            {t("profile.title")}
             </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="flex items-center justify-center mb-4">
               <MapPin className="w-4 h-4 mr-2" />
-              <span>Midtjylland, DK</span>
+              <span>{t("profile.location")}</span>
             </div>
             <p className="text-center mb-4">
-              Passionate about creating innovative web solutions.
+              {t("profile.description")}
             </p>
             <div className="flex justify-center space-x-4">
-              <Badge variant="outline">
-                <Code2 className="w-4 h-4 mr-2" /> 5+ Years Exp
-              </Badge>
-              <Badge variant="outline">
-                <GraduationCap className="w-4 h-4 mr-2" /> N/A
-              </Badge>
+              <BadgeComponent variant="outline">
+                <Code2 className="w-4 h-4 mr-2" /> {t("profile.experience")}
+              </BadgeComponent>
+              <BadgeComponent variant="outline">
+                <GraduationCap className="w-4 h-4 mr-2" /> {t("profile.education")}
+              </BadgeComponent>
             </div>
           </CardContent>
         </MotionCard>
@@ -125,16 +111,12 @@ export default function About() {
         <MotionCard variants={cardVariants}>
           <CardHeader>
             <CardTitle className="flex items-center">
-              <Briefcase className="w-5 h-5 mr-2" /> Professional Summary
+              <Briefcase className="w-5 h-5 mr-2" /> {t("summery.title")}
             </CardTitle>
           </CardHeader>
           <CardContent>
             <p>
-              With over 5 years of experience in full stack development, I
-              specialize in building scalable web applications using
-              TypeScript, Next.js, and cloud technologies. I&apos;m
-              passionate about clean code, user-centric design, and
-              continuous learning.
+            {t("summery.content")}
             </p>
           </CardContent>
         </MotionCard>
@@ -142,15 +124,12 @@ export default function About() {
         <MotionCard variants={cardVariants}>
           <CardHeader>
             <CardTitle className="flex items-center">
-              <Globe className="w-5 h-5 mr-2" /> Current Focus
+              <Globe className="w-5 h-5 mr-2" /> {t("focus.title")}
             </CardTitle>
           </CardHeader>
           <CardContent>
             <p>
-              Currently, I&apos;m focused on expanding my knowledge in AI and machine
-              learning, particularly in their applications to web development.
-              I&apos;m also exploring serverless architectures and edge computing
-              to enhance the performance and scalability of web applications.
+            {t("focus.content")}
             </p>
           </CardContent>
         </MotionCard>
@@ -158,90 +137,7 @@ export default function About() {
         <MotionCard className="md:col-span-2" variants={cardVariants}>
           <CardHeader>
             <CardTitle className="flex items-center">
-              <Laptop className="w-5 h-5 mr-2" /> Technical Skills
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {skills.map((skill, index) => (
-                <motion.div
-                  key={skill.name}
-                  className="flex items-center"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <span className="w-24">{skill.name}</span>
-                  <Progress value={skill.level} className="flex-grow" />
-                  <span className="ml-2 text-sm">{skill.level}%</span>
-                </motion.div>
-              ))}
-            </div>
-          </CardContent>
-        </MotionCard>
-
-        <MotionCard variants={cardVariants}>
-          <CardHeader>
-            <CardTitle className="flex items-center">
-              <Globe className="w-5 h-5 mr-2" /> Languages
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ul className="list-none space-y-2">
-              {languages.map((lang, index) => (
-                <motion.li
-                  key={lang.name}
-                  className="flex items-center"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <span className="mr-2 text-xl">{lang.flag}</span>
-                  <span>
-                    {lang.name} - {lang.level}
-                  </span>
-                </motion.li>
-              ))}
-            </ul>
-          </CardContent>
-        </MotionCard>
-
-        <MotionCard variants={cardVariants}>
-          <CardHeader>
-            <CardTitle className="flex items-center">
-              <GraduationCap className="w-5 h-5 mr-2" /> Certifications
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ul className="list-disc list-inside">
-              {certifications.map((cert) => (
-                <li key={cert.name}>
-                  {cert.name} ({cert.year})
-                </li>
-              ))}
-            </ul>
-          </CardContent>
-        </MotionCard>
-
-        <MotionCard variants={cardVariants}>
-          <CardHeader>
-            <CardTitle className="flex items-center">
-              <CalendarDays className="w-5 h-5 mr-2" /> Recent Milestones
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ul className="list-disc list-inside">
-              <li>Completed a major project using Next.js and TypeScript</li>
-              <li>Contributed to open-source projects on GitHub</li>
-              <li>Mentored junior developers in web technologies</li>
-            </ul>
-          </CardContent>
-        </MotionCard>
-
-        <MotionCard variants={cardVariants}>
-          <CardHeader>
-            <CardTitle className="flex items-center">
-              <Book className="w-5 h-5 mr-2" /> Interests
+              <Book className="w-5 h-5 mr-2" /> {t("interests.title")}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -253,7 +149,10 @@ export default function About() {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <Badge variant="secondary">{interest}</Badge>
+                  <BadgeComponent variant="secondary">
+                    <Code2 className="w-4 h-4 mr-2" />
+                    {interest}
+                  </BadgeComponent>
                 </motion.div>
               ))}
             </div>
@@ -263,7 +162,7 @@ export default function About() {
         <MotionCard variants={cardVariants}>
           <CardHeader>
             <CardTitle className="flex items-center">
-              <Palette className="w-5 h-5 mr-2" /> Hobbies
+              <Palette className="w-5 h-5 mr-2" /> {t("hobbies.title")}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -275,10 +174,62 @@ export default function About() {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <Badge variant="outline">{hobby}</Badge>
+                  <BadgeComponent variant="outline">
+                    <LucideBadge className="w-4 h-4 mr-2" />
+                    {hobby}
+                  </BadgeComponent>
                 </motion.div>
               ))}
             </div>
+          </CardContent>
+        </MotionCard>
+
+        {/* Fun Facts Section */}
+        <MotionCard variants={cardVariants}>
+          <CardHeader>
+            <CardTitle className="flex items-center">
+              <LucideBadge className="w-5 h-5 mr-2" /> {t("fun-facts.title")}
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ul className="list-disc pl-5">
+              {funFacts.map((fact, index) => (
+                <li key={index} className="mb-2">
+                  {fact}
+                </li>
+              ))}
+            </ul>
+          </CardContent>
+        </MotionCard>
+
+        {/* Personal Philosophy Section */}
+        <MotionCard variants={cardVariants}>
+          <CardHeader>
+            <CardTitle className="flex items-center">
+              <Code2 className="w-5 h-5 mr-2" /> {t("philosophy.title")}
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p>{personalPhilosophy}</p>
+          </CardContent>
+        </MotionCard>
+
+        {/* FAQ Section */}
+        <MotionCard variants={cardVariants} className="md:col-span-2">
+          <CardHeader>
+            <CardTitle className="flex items-center">
+              <Book className="w-5 h-5 mr-2" /> {t("faq.title")}
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <Accordion type="single" collapsible>
+              {faqs.map((faq, index) => (
+                <AccordionItem key={index} value={`item-${index}`}>
+                  <AccordionTrigger>{faq.question}</AccordionTrigger>
+                  <AccordionContent>{faq.answer}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </CardContent>
         </MotionCard>
       </motion.div>

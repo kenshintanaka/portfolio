@@ -10,11 +10,13 @@ import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { Skeleton } from "@/components/ui/skeleton";
+import { useTranslations } from "next-intl";
 
 export default function Home() {
+  const t = useTranslations("home")
   const [typedText, setTypedText] = useState("");
   const [imageLoaded, setImageLoaded] = useState(false);
-  const fullText = "I'm a Full Stack Developer";
+  const fullText = t('message');
   const isPC = useMediaQuery("(min-width: 1024px)");
   const backgroundRef = useRef<HTMLDivElement>(null);
   const mouseX = useMotionValue(0);
@@ -50,6 +52,7 @@ export default function Home() {
 
       backgroundRef.current.addEventListener("mousemove", handleMouseMove);
       return () => {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         backgroundRef.current?.removeEventListener(
           "mousemove",
           handleMouseMove
@@ -79,23 +82,20 @@ export default function Home() {
 
   const projects = [
     {
-      title: "AniVue",
-      description:
-        "A sleek anime streaming platform with a vast library and personalized recommendations",
+      title: t('projects.project1.title'),
+      description: t('projects.project1.description'),
       tags: ["Next.js", "Vercel", "Framer Motion", "shadcn/ui"],
       siteUrl: "https://www.anivue.com",
     },
     {
-      title: "ComicSphere",
-      description:
-        "A feature-rich SaaS for comic creators to host, manage, and monetize their digital comics",
+      title: t('projects.project2.title'),
+      description: t('projects.project2.description'),
       tags: ["Next.js", "Vercel", "Framer Motion", "shadcn/ui"],
       siteUrl: "https://www.comicsphere.org",
     },
     {
-      title: "Portfolio Website",
-      description:
-        "An interactive showcase of my projects and skills, featuring smooth animations and a modern design",
+      title: t('projects.project3.title'),
+      description: t('projects.project3.description'),
       tags: ["Next.js", "Vercel", "Framer Motion", "shadcn/ui"],
       siteUrl: "https://www.julianmaggio.me",
       githubUrl: "https://github.com/julianmaggio/portfolio",
@@ -127,21 +127,20 @@ export default function Home() {
         <div className="relative z-10 grid gap-12 md:grid-cols-2 items-center">
           <motion.div variants={itemVariants}>
             <h1 className="text-4xl font-bold mb-4">
-              Hello, I&apos;m Julian Maggio
+            {t('title')}
             </h1>
             <h2 className="text-2xl font-semibold mb-6 text-primary h-8">
               {typedText}
             </h2>
             <p className="text-lg mb-6">
-              Passionate about creating innovative web solutions and turning
-              ideas into reality through code.
+            {t('description')}
             </p>
             <div className="flex space-x-4">
               <Button asChild>
-                <Link href="/projects">View Projects</Link>
+                <Link href="/projects">{t('button1')}</Link>
               </Button>
               <Button variant="outline" asChild>
-                <Link href="/resume">View Resume</Link>
+                <Link href="/resume">{t('button2')}</Link>
               </Button>
             </div>
           </motion.div>
@@ -174,7 +173,7 @@ export default function Home() {
           variants={itemVariants}
           className="text-3xl font-bold mb-8 text-center"
         >
-          Featured Projects
+          {t('project-title')}
         </motion.h2>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
@@ -199,7 +198,7 @@ export default function Home() {
                       <Button variant="outline" className="flex-1" asChild>
                         <Link href={project.siteUrl} target="_blank" rel="noopener noreferrer">
                           <ExternalLink className="mr-2 h-4 w-4" />
-                          View Site
+                          {t('viewsite')}
                         </Link>
                       </Button>
                     )}
@@ -226,16 +225,15 @@ export default function Home() {
         animate="visible"
       >
         <motion.h2 variants={itemVariants} className="text-3xl font-bold mb-8">
-          Let&apos;s Work Together
+        {t('contact.title')}
         </motion.h2>
         <motion.p variants={itemVariants} className="text-lg mb-8">
-          I&apos;m always open to new opportunities and exciting projects. Feel free
-          to reach out!
+        {t('contact.description')}
         </motion.p>
         <motion.div variants={itemVariants}>
           <Button asChild size="lg">
             <Link href="/contact">
-              Get in Touch <ExternalLink className="ml-2 h-4 w-4" />
+            {t('contact.button')} <ExternalLink className="ml-2 h-4 w-4" />
             </Link>
           </Button>
         </motion.div>

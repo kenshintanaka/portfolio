@@ -1,9 +1,11 @@
 'use client'
 
 import { Github, Linkedin } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 import { useEffect, useState } from 'react'
 
 export default function Footer() {
+  const t = useTranslations("footer")
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear())
 
   useEffect(() => {
@@ -18,7 +20,7 @@ export default function Footer() {
     <footer className="bg-background/80 backdrop-blur-md border-t">
       <div className="container mx-auto px-4 py-6 flex flex-col sm:flex-row justify-between items-center">
         <p className="text-sm text-muted-foreground mb-4 sm:mb-0">
-          © {currentYear} Julian Maggio. All rights reserved.
+          © 2022 - {currentYear} Julian Maggio. {t('copyright')}.
         </p>
         <div className="flex space-x-4">
           <a 

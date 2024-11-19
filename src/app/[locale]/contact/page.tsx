@@ -12,25 +12,27 @@ import { Button } from "@/components/ui/button"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { useToast } from "@/hooks/use-toast"
 import { Loader2, Mail, MapPin, Phone } from 'lucide-react'
-
-const formSchema = z.object({
-  name: z.string().min(2, {
-    message: "Name must be at least 2 characters.",
-  }),
-  email: z.string().email({
-    message: "Please enter a valid email address.",
-  }),
-  subject: z.string().min(5, {
-    message: "Subject must be at least 5 characters.",
-  }),
-  message: z.string().min(10, {
-    message: "Message must be at least 10 characters.",
-  }),
-})
+import { useTranslations } from 'next-intl'
 
 export default function ContactPage() {
+  const t = useTranslations('contact')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const { toast } = useToast()
+
+  const formSchema = z.object({
+    name: z.string().min(2, {
+      message: t('form.name.error'),
+    }),
+    email: z.string().email({
+      message: t('form.email.error'),
+    }),
+    subject: z.string().min(5, {
+      message: t('form.subject.error'),
+    }),
+    message: z.string().min(10, {
+      message: t('form.message.error'),
+    }),
+  })
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -57,8 +59,8 @@ export default function ContactPage() {
 
       if (response.ok) {
         toast({
-          title: "Message sent!",
-          description: "Thank you for your message. I'll get back to you soon.",
+          title: t('popup.success.title'),
+          description: t('popup.success.description'),
         })
         form.reset()
       } else {
@@ -66,8 +68,8 @@ export default function ContactPage() {
       }
     } catch (error) {
       toast({
-        title: "Error",
-        description: error instanceof Error ? error.message : "Failed to send message. Please try again later.",
+        title: t('popup.success.title'),
+        description: error instanceof Error ? error.message : t('popup.success.description'),
         variant: "destructive",
       })
     } finally {
@@ -102,30 +104,29 @@ export default function ContactPage() {
         initial="hidden"
         animate="visible"
       >
-        <motion.h1 variants={itemVariants} className="text-4xl font-bold mb-8 text-center">Get in Touch</motion.h1>
-        <motion.p variants={itemVariants} className="text-lg text-center mb-12">
-          I&apos;d love to hear from you! Whether you have a project in mind or just want to say hello, feel free to reach out.
+        <motion.h1 variants={itemVariants} className="text-4xl font-bold mb-8 text-center">{t('title')}</motion.h1>
+        <motion.p variants={itemVariants} className="text-lg text-center mb-12">{t('description')}
         </motion.p>
 
         <div className="grid gap-8 md:grid-cols-2">
           <motion.div variants={itemVariants}>
             <Card>
               <CardHeader>
-                <CardTitle>Contact Information</CardTitle>
-                <CardDescription>Here&apos;s how you can reach me directly</CardDescription>
+                <CardTitle>{t('info.title')}</CardTitle>
+                <CardDescription>{t('info.description')}</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-center">
                   <Mail className="h-5 w-5 mr-2 text-primary" />
-                  <p>julian@kukiku.org</p>
+                  <p>{t('info.mail')}</p>
                 </div>
                 <div className="flex items-center">
                   <Phone className="h-5 w-5 mr-2 text-primary" />
-                  <p>shhhh secret</p>
+                  <p>{t('info.phone')}</p>
                 </div>
                 <div className="flex items-center">
                   <MapPin className="h-5 w-5 mr-2 text-primary" />
-                  <p>Midtjylland, DK</p>
+                  <p>{t('info.location')}</p>
                 </div>
               </CardContent>
             </Card>
@@ -134,8 +135,8 @@ export default function ContactPage() {
           <motion.div variants={itemVariants}>
             <Card>
               <CardHeader>
-                <CardTitle>Send a Message</CardTitle>
-                <CardDescription>Fill out the form below and I&apos;ll get back to you as soon as possible</CardDescription>
+                <CardTitle>{t('form.title')}</CardTitle>
+                <CardDescription>{t('form.description')}</CardDescription>
               </CardHeader>
               <CardContent>
                 <Form {...form}>
@@ -145,9 +146,9 @@ export default function ContactPage() {
                       name="name"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Name</FormLabel>
+                          <FormLabel>{t('form.name.title')}</FormLabel>
                           <FormControl>
-                            <Input placeholder="Your name" {...field} />
+                            <Input placeholder={t('form.name.placeholder')} {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -158,9 +159,9 @@ export default function ContactPage() {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Email</FormLabel>
+                          <FormLabel>{t('form.email.title')}</FormLabel>
                           <FormControl>
-                            <Input placeholder="Your email" {...field} />
+                            <Input placeholder={t('form.email.placeholder')} {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -171,9 +172,9 @@ export default function ContactPage() {
                       name="subject"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Subject</FormLabel>
+                          <FormLabel>{t('form.subject.title')}</FormLabel>
                           <FormControl>
-                            <Input placeholder="Message subject" {...field} />
+                            <Input placeholder={t('form.subject.placeholder')} {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -184,9 +185,9 @@ export default function ContactPage() {
                       name="message"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Message</FormLabel>
+                          <FormLabel>{t('form.message.title')}</FormLabel>
                           <FormControl>
-                            <Textarea placeholder="Your message" {...field} />
+                            <Textarea placeholder={t('form.message.title')} {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -196,10 +197,10 @@ export default function ContactPage() {
                       {isSubmitting ? (
                         <>
                           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                          Sending...
+                          {t('form.submit.sending')}
                         </>
                       ) : (
-                        'Send Message'
+                        t('form.submit.button')
                       )}
                     </Button>
                   </form>
