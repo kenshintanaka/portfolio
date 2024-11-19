@@ -6,46 +6,48 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Timeline, TimelineItem, TimelineContent } from "@/components/ui/timeline"
 import { Briefcase, GraduationCap, Award, Code } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 
 const workExperience = [
   {
-    title: "Full Stack Developer",
-    company: "Kukiku",
-    period: "2016 - Present",
+    title: "workExperience.content.job1.jobtitle",
+    company: "workExperience.content.job1.company",
+    period: "workExperience.content.job1.period",
     responsibilities: [
-      "Develop and maintain web applications using modern technologies",
-      "Implement responsive designs and optimize application performance",
-      "Participate in code reviews and mentor junior developers"
+      "workExperience.content.job1.work.responsibility1",
+      "workExperience.content.job1.work.responsibility2",
+      "workExperience.content.job1.work.responsibility3"
     ]
-  }
+  },
 ]
 
 const education = [
   {
-    degree: "Just some random tech school",
-    institution: "VidenDjurs",
-    period: "2024 - Present (Ongoing)",
-    description: "Currently learning stuff, focusing on software engineering and web technologies"
-  }
+    degree: "education.content.education1.degree",
+    institution: "education.content.education1.institution",
+    period: "education.content.education1.period",
+    description: "education.content.education1.description"
+  },
 ]
 
 const skills = [
-  { title: "Programming Languages", skills: ["JavaScript", "TypeScript", "Python", "Java", "C++"] },
-  { title: "Frameworks & Libraries", skills: ["React", "Node.js", "Next.js"] },
-  { title: "Databases", skills: ["MongoDB", "PostgreSQL", "MySQL"] },
-  { title: "Tools & Technologies", skills: ["Git", "Vercel", "REST API"] }
+  { title: "skills.sections.programmingLanguages", skills: ["JavaScript", "TypeScript", "Python", "Java", "C++"] },
+  { title: "skills.sections.frameworksLibraries", skills: ["React", "Node.js", "Next.js"] },
+  { title: "skills.sections.databases", skills: ["MongoDB", "PostgreSQL", "MySQL"] },
+  { title: "skills.sections.toolsTechnologies", skills: ["Git", "Vercel", "REST API"] }
 ]
 
 const certifications = [
   {
-    title: "None",
-    issuer: "None",
-    date: "N/A",
-    description: "Idk why I even added this section already"
-  }
+    title: "certifications.content.certificate1.title",
+    issuer: "certifications.content.certificate1.issuer",
+    date: "certifications.content.certificate1.date",
+    description: "certifications.content.certificate1.description"
+  },
 ]
 
 export default function Resume() {
+  const t = useTranslations('resume')
   const [scope, animate] = useAnimate()
 
   useEffect(() => {
@@ -74,7 +76,7 @@ export default function Resume() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
       >
-        My Resume
+        {t('pageTitle')}
       </motion.h1>
       <div className="grid gap-6 md:grid-cols-2">
         <motion.div className="section" variants={sectionVariants}>
@@ -82,7 +84,7 @@ export default function Resume() {
             <CardHeader>
               <CardTitle className="flex items-center">
                 <Briefcase className="w-5 h-5 mr-2" />
-                Work Experience
+                {t('workExperience.title')}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -91,11 +93,11 @@ export default function Resume() {
                   <motion.div key={index} className="timeline-item" variants={timelineItemVariants}>
                     <TimelineItem>
                       <TimelineContent>
-                        <h3 className="text-lg font-semibold">{job.title}</h3>
-                        <p className="text-sm text-muted-foreground">{job.company} • {job.period}</p>
+                        <h3 className="text-lg font-semibold">{t(job.title)}</h3>
+                        <p className="text-sm text-muted-foreground">{t(job.company)} • {t(job.period)}</p>
                         <ul className="mt-2 list-disc list-inside text-sm">
                           {job.responsibilities.map((responsibility, idx) => (
-                            <li key={idx}>{responsibility}</li>
+                            <li key={idx}>{t(responsibility)}</li>
                           ))}
                         </ul>
                       </TimelineContent>
@@ -112,7 +114,7 @@ export default function Resume() {
             <CardHeader>
               <CardTitle className="flex items-center">
                 <GraduationCap className="w-5 h-5 mr-2" />
-                Education
+                {t('education.title')}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -121,9 +123,9 @@ export default function Resume() {
                   <motion.div key={index} className="timeline-item" variants={timelineItemVariants}>
                     <TimelineItem>
                       <TimelineContent>
-                        <h3 className="text-lg font-semibold">{edu.degree}</h3>
-                        <p className="text-sm text-muted-foreground">{edu.institution} • {edu.period}</p>
-                        <p className="mt-2 text-sm">{edu.description}</p>
+                        <h3 className="text-lg font-semibold">{t(edu.degree)}</h3>
+                        <p className="text-sm text-muted-foreground">{t(edu.institution)} • {t(edu.period)}</p>
+                        <p className="mt-2 text-sm">{t(edu.description)}</p>
                       </TimelineContent>
                     </TimelineItem>
                   </motion.div>
@@ -138,14 +140,14 @@ export default function Resume() {
             <CardHeader>
               <CardTitle className="flex items-center">
                 <Code className="w-5 h-5 mr-2" />
-                Skills
+                {t('skills.title')}
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-2 gap-4">
                 {skills.map((category, index) => (
                   <motion.div key={index} className="timeline-item" variants={timelineItemVariants}>
-                    <h3 className="font-semibold mb-2">{category.title}</h3>
+                    <h3 className="font-semibold mb-2">{t(category.title)}</h3>
                     <div className="flex flex-wrap gap-2">
                       {category.skills.map((skill) => (
                         <Badge key={skill} variant="secondary">{skill}</Badge>
@@ -164,7 +166,7 @@ export default function Resume() {
               <CardHeader>
                 <CardTitle className="flex items-center">
                   <Award className="w-5 h-5 mr-2" />
-                  Certifications & Achievements
+                  {t('certifications.title')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -173,9 +175,9 @@ export default function Resume() {
                     <motion.div key={index} className="timeline-item" variants={timelineItemVariants}>
                       <TimelineItem>
                         <TimelineContent>
-                          <h3 className="text-lg font-semibold">{cert.title}</h3>
-                          <p className="text-sm text-muted-foreground">{cert.issuer} • {cert.date}</p>
-                          {cert.description && <p className="mt-2 text-sm">{cert.description}</p>}
+                          <h3 className="text-lg font-semibold">{t(cert.title)}</h3>
+                          <p className="text-sm text-muted-foreground">{t(cert.issuer)} • {t(cert.date)}</p>
+                          {cert.description && <p className="mt-2 text-sm">{t(cert.description)}</p>}
                         </TimelineContent>
                       </TimelineItem>
                     </motion.div>

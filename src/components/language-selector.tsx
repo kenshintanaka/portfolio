@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation"; // Import useRouter for navigation
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -10,6 +10,7 @@ import {
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import { Globe } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl"; // Import next-intl hooks
 
 interface Language {
   code: string;
@@ -17,43 +18,44 @@ interface Language {
   flag: string;
 }
 
-const languages: Language[] = [
-  { code: "en", label: "English", flag: "GB" },
-  { code: "da", label: "Danish", flag: "DK" },
-  { code: "de", label: "German", flag: "DE" },
-];
-
 export function LanguageSelector() {
-  const router = useRouter(); // Initialize useRouter
+  const router = useRouter();
+  const currentLocale = useLocale(); // Get the current locale
+  const t = useTranslations("languageSelector"); // Load translations from JSON
   const [mounted, setMounted] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState("en");
+
+  const languages: Language[] = [
+    { code: "en", label: t("languages.en"), flag: "GB" }, // Dynamically translated
+    { code: "da", label: t("languages.da"), flag: "DK" }, // Dynamically translated
+  ];
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
+  const handleLanguageChange = (lang: string) => {
+    if (lang === currentLocale) return; // Prevent unnecessary changes
+
+    const currentPath = window.location.pathname;
+
+    // Remove the current locale from the path (if exists)
+    const pathWithoutLocale = currentPath.replace(`/${currentLocale}`, "");
+
+    // Build the new path with the selected language
+    const updatedPath = `/${lang}${pathWithoutLocale}`;
+
+    // Redirect to the new path
+    router.push(updatedPath);
+  };
+
   if (!mounted) {
     return null;
   }
 
-  const handleLanguageChange = (lang: string) => {
-    setSelectedLanguage(lang);
-  
-    // Get the current path
-    const currentPath = window.location.pathname;
-  
-    // Remove existing locale from the path
-    const updatedPath = currentPath.replace(/^\/(en|da|de)(\/.*)?/, `/${lang}`);
-  
-    // Redirect to the updated path
-    router.push(updatedPath);
-  };
-  
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon" aria-label="Select language">
+        <Button variant="ghost" size="icon" aria-label={t("title")}>
           <Globe className="h-5 w-5" />
         </Button>
       </DropdownMenuTrigger>
@@ -62,7 +64,7 @@ export function LanguageSelector() {
           <DropdownMenuItem
             key={lang.code}
             onClick={() => handleLanguageChange(lang.code)}
-            className={selectedLanguage === lang.code ? "font-bold" : ""}
+            className={currentLocale === lang.code ? "font-bold" : ""}
           >
             {lang.label}
           </DropdownMenuItem>

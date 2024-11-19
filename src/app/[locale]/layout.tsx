@@ -2,10 +2,13 @@ import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import LoadingScreen from "@/components/loading-screen";
 import PageTransition from "@/components/page-transition";
 import { Toaster } from "@/components/ui/toaster";
 import { SmoothScroll } from "@/components/smooth-scroll";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
+import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
 import "./globals.css";
 import type { Metadata } from "next";
 
@@ -59,23 +62,52 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params: { locale },
 }: {
   children: React.ReactNode;
+  params: { locale: string };
 }) {
+  // Ensure the incoming locale is valid
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  if (!routing.locales.includes(locale as any)) {
+    notFound();
+  }
+
+  // Fetch messages for the locale
+  const messages = await getMessages(locale);
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
+      <head>
+        <link
+          rel="icon"
+          type="image/png"
+          href="/favicon-96x96.png"
+          sizes="96x96"
+        />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <meta name="apple-mobile-web-app-title" content="Julian" />
+        <link rel="manifest" href="/site.webmanifest" />
+      </head>
       <body className={`${inter.className} select-none`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <SmoothScroll>
-            <LoadingScreen />
-            <Navbar />
-            <PageTransition>
-              <main className="min-h-screen pt-8 pb-8">{children}</main>
-            </PageTransition>
-            <Footer />
-            <Toaster />
+            <NextIntlClientProvider messages={messages}>
+              <Navbar />
+              <PageTransition>
+                <main className="min-h-screen pt-8 pb-8">{children}</main>
+              </PageTransition>
+              <Footer />
+              <Toaster />
+            </NextIntlClientProvider>
           </SmoothScroll>
         </ThemeProvider>
       </body>

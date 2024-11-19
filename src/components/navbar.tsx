@@ -1,21 +1,22 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { Menu, X, } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { LanguageSelector } from "./language-selector";
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 
 const navItems = [
-  { name: "Home", path: "/" },
-  { name: "About", path: "/about" },
-  { name: "Projects", path: "/projects" },
-  { name: "Resume", path: "/resume" },
-  { name: "Contact", path: "/contact" },
+  { key: "home", path: "/" },
+  { key: "about", path: "/about" },
+  { key: "projects", path: "/projects" },
+  { key: "resume", path: "/resume" },
+  { key: "contact", path: "/contact" },
 ];
 
 export default function Navbar() {
@@ -23,6 +24,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const isMobile = useMediaQuery("(max-width: 768px)");
+  const t = useTranslations('Navbar');  // Translate strings for the Navbar
 
   useEffect(() => {
     setActiveItem(pathname);
@@ -31,13 +33,11 @@ export default function Navbar() {
 
   const NavItems = ({ mobile = false, onItemClick = () => {} }) => (
     <ul
-      className={`flex ${
-        mobile ? "flex-col space-y-6" : "space-x-2"
-      } items-center`}
+      className={`flex ${mobile ? "flex-col space-y-6" : "space-x-2"} items-center`}
     >
       {navItems.map((item) => (
         <motion.li
-          key={item.name}
+          key={item.key}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
@@ -48,7 +48,7 @@ export default function Navbar() {
             onClick={() => onItemClick()}
           >
             <Link href={item.path}>
-              {item.name}
+              {t(item.key)} {/* Translated name */}
               {activeItem === item.path && (
                 <motion.div
                   className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
