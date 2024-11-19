@@ -28,6 +28,25 @@ const projects = [
     tags: ['Next.js', 'Vercel', 'Framer Motion', 'shadcn/ui'],
     siteUrl: 'https://www.comicsphere.org/',
   },
+  {
+    id: 'webdemands',
+    image: 'https://o9ybdhbfta3tzvhp.public.blob.vercel-storage.com/yes/www.webdemand.dev_-XJ5PJmMYOnd1a6Vwcs7rqqrL1yBeyX.png',
+    tags: ['Next.js', 'Vercel', 'shadcn/ui'],
+    siteUrl: 'https://www.webdemand.dev/'
+  },
+  {
+    id: 'portfolio',
+    image: 'https://o9ybdhbfta3tzvhp.public.blob.vercel-storage.com/yes/localhost_3000_%20(2)-bTDtoBkX9SvBHxDuGj0TmSA7MdxPIb.png',
+    tags: ['Next.js', 'Vercel', 'Framer Motion', 'shadcn/ui'],
+    siteUrl: 'https://www.julianmaggio.me',
+    githubUrl: 'https://github.com/julianmaggio/portfolio'
+  },
+  {
+    id: 'rtspackage',
+    image: 'https://o9ybdhbfta3tzvhp.public.blob.vercel-storage.com/yes/www.rbxts-npm.com_-f2ibhe5m2ZVGaeeQcAgtxHEhG5KTJV.png',
+    tags: ['Next.js', 'Vercel', 'Roblox', 'shadcn/ui', 'Roblox-TS'],
+    siteUrl: 'https://www.rbxts-npm.com/',
+  },
 ]
 
 const allTags = Array.from(new Set(projects.flatMap((project) => project.tags)))

@@ -1,0 +1,244 @@
+{
+  "Navbar": {
+    "home": "Heim",
+    "about": "Um",
+    "projects": "Projekte",
+    "resume": "Wieder aufnehmen",
+    "contact": "Kontakt"
+  },
+  "footer": {
+    "copyright": "Alle Rechte vorbehalten"
+  },
+  "languageSelector": {
+    "title": "Sprache auswählen",
+    "languages": {
+      "en": "Englisch",
+      "da": "Dänisch",
+      "de": "Deutsch"
+    }
+  },
+  "themeSelector": {
+    "title": "Design umschalten",
+    "themes": {
+      "system": "System",
+      "dark": "Dunkel",
+      "light": "Licht"
+    }
+  },
+  "home": {
+    "title": "Hallo, ich bin Julian Maggio",
+    "message": "Ich bin ein Full Stack Entwickler",
+    "description": "Mit Leidenschaft dabei, innovative Weblösungen zu entwickeln und Ideen mithilfe von Code in die Realität umzusetzen.",
+    "button1": "Projekte anzeigen",
+    "button2": "Lebenslauf ansehen",
+    "project-title": "Ausgewählte Projekte",
+    "viewsite": "Site anzeigen",
+    "projects": {
+      "project1": {
+        "title": "AniVue",
+        "description": "Eine elegante Anime-Streaming-Plattform mit einer riesigen Bibliothek und personalisierten Empfehlungen"
+      },
+      "project2": {
+        "title": "ComicSphere",
+        "description": "Ein funktionsreiches SaaS für Comicautoren zum Hosten, Verwalten und Monetarisieren ihrer digitalen Comics"
+      },
+      "project3": {
+        "title": "Portfolio Website",
+        "description": "Eine interaktive Präsentation meiner Projekte und Fähigkeiten mit flüssigen Animationen und modernem Design"
+      }
+    },
+    "contact": {
+      "title": "Lassen Sie uns zusammenarbeiten",
+      "description": "Ich bin immer offen für neue Möglichkeiten und spannende Projekte. Nehmen Sie gerne Kontakt mit mir auf!",
+      "button": "Schreiben Sie uns"
+    }
+  },
+  "about": {
+    "title": "Über mich",
+    "profile": {
+      "title": "Full-Stack-Entwickler",
+      "location": "Midtjylland, DK",
+      "description": "Mit Leidenschaft bei der Entwicklung innovativer Weblösungen.",
+      "experience": "5+ Jahre Erfahrung",
+      "education": "N / A"
+    },
+    "summery": {
+      "title": "Berufliche Zusammenfassung",
+      "content": "Mit über 5 Jahren Erfahrung in der Full-Stack-Entwicklung bin ich auf die Erstellung skalierbarer Webanwendungen mit TypeScript, Next.js und Cloud-Technologien spezialisiert. Ich brenne für sauberen Code, benutzerzentriertes Design und kontinuierliches Lernen."
+    },
+    "focus": {
+      "title": "Aktueller Schwerpunkt",
+      "content": "Derzeit konzentriere ich mich darauf, mein Wissen in den Bereichen KI und maschinelles Lernen zu erweitern, insbesondere in Bezug auf deren Anwendung in der Webentwicklung. Ich beschäftige mich auch mit serverlosen Architekturen und Edge Computing, um die Leistung und Skalierbarkeit von Webanwendungen zu verbessern."
+    },
+    "interests": {
+      "title": "Meine Interessen",
+      "content": {
+        "interest1": "Web-Entwicklung",
+        "interest2": "KI",
+        "interest3": "Cloud Computing"
+      }
+    },
+    "hobbies": {
+      "title": "Meine Hobbies",
+      "content": {
+        "hobby1": "Reisen",
+        "hobby2": "Kochen",
+        "hobby3": "Programmierung"
+      }
+    },
+    "fun-facts": {
+      "title": "Wissenswertes",
+      "content": {
+        "fact1": "Im Moment keine lustigen Fakten"
+      }
+    },
+    "philosophy": {
+      "title": "Persönliche Philosophie",
+      "content": "Ich glaube an kontinuierliches Lernen, Problemlösung durch Kreativität und eine positive Wirkung durch Technologie."
+    },
+    "faq": {
+      "title": "Häufig gestellte Fragen",
+      "content": {
+        "faq1": {
+          "question": "Was ist Ihre bevorzugte Programmiersprache?",
+          "answer": "JavaScript (aber ich liebe auch TypeScript und Lua)."
+        },
+        "faq2": {
+          "question": "Woran arbeiten Sie gerade?",
+          "answer": "Ich beschäftige mich derzeit eingehender mit KI und maschinellem Lernen und konzentriere mich darauf, wie diese die Webentwicklung verbessern können."
+        },
+        "faq3": {
+          "question": "Wie kann ich Sie kontaktieren?",
+          "answer": "Sie können mich gerne über mein Kontaktformular oder über LinkedIn erreichen."
+        }
+      }
+    }
+  },
+  "projects": {
+    "pageTitle": "Meine Projekte",
+    "searchPlaceholder": "Projekte suchen...",
+    "tags": "Schlagwörter",
+    "visitSite": "Seite besuchen",
+    "viewCode": "Code anzeigen",
+    "projectDescriptions": {
+      "aniVue": {
+        "title": "AniVue",
+        "description": "Tauchen Sie mit AniVue in die faszinierende Welt des Anime ein. Dieses Kinoportal bietet eine umfangreiche Bibliothek japanischer Animationen mit personalisierten Empfehlungen und einer eleganten, benutzerfreundlichen Oberfläche. Erleben Sie die Zukunft des Anime-Streamings."
+      },
+      "comicSphere": {
+        "title": "ComicSphere",
+        "description": "Verwirklichen Sie Ihre Comic-Vision mit ComicSphere, einer umfassenden Plattform für die digitale Erstellung und Verbreitung von Comics. Von intuitiven Design-Tools bis hin zu Community-Engagement-Funktionen bietet ComicSphere alles, was Sie brauchen, um Ihre Comic-Träume zum Leben zu erwecken und sie mit der Welt zu teilen."
+      },
+      "webdemands": {
+        "title": "Webanforderungen",
+        "description": "Willkommen bei WebDemand, wo Ihre digitalen Ideen Wirklichkeit werden. Unsere Plattform verbindet visionäre Kunden mit erfahrenen Entwicklern und sorgt dafür, dass Ihre Webprojekte mit Präzision und Kreativität zum Leben erweckt werden. Erleben Sie die Zukunft der Zusammenarbeit bei der Webentwicklung."
+      },
+      "portfolio": {
+        "title": "Portfolio Website",
+        "description": "Sie sehen es sich an! Diese interaktive Präsentation meiner Arbeit zeigt meine Leidenschaft für die Gestaltung ansprechender digitaler Erlebnisse. Mit flüssigen Animationen, ansprechendem Design und einer kuratierten Auswahl meiner besten Projekte ist dieses Portfolio ein Beweis meiner Fähigkeiten als Webentwickler."
+      },
+      "rtspackage": {
+        "title": "Roblox-TS-Paketfinder",
+        "description": "Entdecken und erkunden Sie Pakete aus dem @rbxts-Bereich"
+      }
+    }
+  },
+  "resume": {
+    "pageTitle": "Mein Lebenslauf",
+    "workExperience": {
+      "title": "Berufserfahrung",
+      "content": {
+        "job1": {
+          "jobtitle": "Full Stack Entwickler",
+          "company": "Kukiku",
+          "period": "2016 – Gegenwart",
+          "work": {
+            "responsibility1": "Entwickeln und warten Sie Webanwendungen mit modernen Technologien",
+            "responsibility2": "Implementieren Sie responsive Designs und optimieren Sie die Anwendungsleistung",
+            "responsibility3": "Nehmen Sie an Codeüberprüfungen teil und betreuen Sie Nachwuchsentwickler"
+          }
+        }
+      }
+    },
+    "education": {
+      "title": "Ausbildung",
+      "content": {
+        "education1": {
+          "degree": "Einfach irgendeine technische Schule",
+          "institution": "Videojuristen",
+          "period": "2024 – heute (laufend)",
+          "description": "Lerne derzeit etwas, mit Schwerpunkt auf Softwareentwicklung und Webtechnologien"
+        }
+      }
+    },
+    "skills": {
+      "title": "Fähigkeiten",
+      "sections": {
+        "programmingLanguages": "Programmiersprachen",
+        "frameworksLibraries": "Frameworks und Bibliotheken",
+        "databases": "Datenbanken",
+        "toolsTechnologies": "Tools & Technologien"
+      }
+    },
+    "certifications": {
+      "title": "Zertifizierungen und Erfolge",
+      "content": {
+        "certificate1": {
+          "title": "Keiner",
+          "issuer": "Keiner",
+          "date": "N / A",
+          "description": "Ich weiß nicht, warum ich diesen Abschnitt überhaupt schon hinzugefügt habe"
+        }
+      }
+    }
+  },
+  "contact": {
+    "title": "Schreiben Sie uns",
+    "description": "Ich freue mich auf Ihre Nachricht! Egal, ob Sie ein Projekt im Sinn haben oder einfach nur Hallo sagen möchten, melden Sie sich einfach bei mir.",
+    "info": {
+      "title": "Kontaktinformationen",
+      "description": "So erreichen Sie mich direkt",
+      "mail": "julian@kukiku.org",
+      "phone": "psssst, Geheimnis",
+      "location": "Midtjylland, DK"
+    },
+    "form": {
+      "title": "Eine Nachricht senden",
+      "description": "Füllen Sie das untenstehende Formular aus und ich werde mich so schnell wie möglich bei Ihnen melden",
+      "name": {
+        "title": "Name",
+        "placeholder": "Ihr Name",
+        "error": "Der Name muss mindestens 2 Zeichen lang sein."
+      },
+      "email": {
+        "title": "E-Mail",
+        "placeholder": "Ihre E-Mail",
+        "error": "Bitte geben Sie eine gültige E-Mail-Adresse ein."
+      },
+      "subject": {
+        "title": "Thema",
+        "placeholder": "Betreff der Nachricht",
+        "error": "Der Betreff muss mindestens 5 Zeichen lang sein."
+      },
+      "message": {
+        "title": "Nachricht",
+        "placeholder": "Ihre Nachricht",
+        "error": "Die Nachricht muss mindestens 10 Zeichen lang sein."
+      },
+      "submit": {
+        "button": "Nachricht senden",
+        "sending": "Senden..."
+      }
+    },
+    "popup": {
+      "success": {
+        "title": "Nachricht gesendet!",
+        "description": "Vielen Dank für Ihre Nachricht. Ich melde mich in Kürze bei Ihnen."
+      },
+      "error": {
+        "title": "Fehler",
+        "description": "Senden der Nachricht fehlgeschlagen. Bitte versuchen Sie es später noch einmal."
+      }
+    }
+  }
+}
