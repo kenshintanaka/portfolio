@@ -13,7 +13,8 @@
     "title": "Select Language",
     "languages": {
       "en": "English",
-      "da": "Danish"
+      "da": "Danish",
+      "de": "German"
     }
   },
   "themeSelector": {
@@ -127,6 +128,18 @@
       "comicSphere": {
         "title": "ComicSphere",
         "description": "Empower your comic vision with ComicSphere, a comprehensive platform for digital comic creation and distribution. From intuitive design tools to community engagement features, ComicSphere provides everything you need to bring your comic dreams to life and share them with the world."
+      },
+      "webdemands": {
+        "title": "WebDemands",
+        "description": "Welcome to WebDemand, where your digital ideas transform into reality. Our platform connects visionary clients with skilled developers, ensuring your web projects are brought to life with precision and creativity. Experience the future of web development collaboration."
+      },
+      "portfolio": {
+        "title": "Portfolio Website",
+        "description": "You're looking at it! This interactive showcase of my work demonstrates my passion for crafting engaging digital experiences. Featuring smooth animations, responsive design, and a curated selection of my best projects, this portfolio is a testament to my skills as a web developer."
+      },
+      "rtspackage": {
+        "title": "Roblox-TS Package Finder",
+        "description": "Discover and explore packages from the @rbxts scope"
       }
     }
   },

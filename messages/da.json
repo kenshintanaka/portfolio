@@ -1,3 +1,244 @@
 {
-
+  "Navbar": {
+    "home": "Hjem",
+    "about": "Om",
+    "projects": "Projekter",
+    "resume": "CV",
+    "contact": "Kontakt"
+  },
+  "footer": {
+    "copyright": "Alle rettigheder forbeholdes"
+  },
+  "languageSelector": {
+    "title": "Vælg sprog",
+    "languages": {
+      "en": "Engelsk",
+      "da": "Dansk",
+      "de": "Tysk"
+    }
+  },
+  "themeSelector": {
+    "title": "Skift tema",
+    "themes": {
+      "system": "System",
+      "dark": "Mørk",
+      "light": "Lys"
+    }
+  },
+  "home": {
+    "title": "Hej, jeg hedder Julian Maggio",
+    "message": "Jeg er fuld stack-udvikler",
+    "description": "Brænder for at skabe innovative webløsninger og omsætte ideer til virkelighed gennem kode.",
+    "button1": "Se projekter",
+    "button2": "Se CV",
+    "project-title": "Udvalgte projekter",
+    "viewsite": "Se websted",
+    "projects": {
+      "project1": {
+        "title": "AniVue",
+        "description": "En slank anime-streamingplatform med et stort bibliotek og personlige anbefalinger"
+      },
+      "project2": {
+        "title": "ComicSphere",
+        "description": "En funktionsrig SaaS til tegneserieskabere til at hoste, administrere og tjene penge på deres digitale tegneserier"
+      },
+      "project3": {
+        "title": "Portefølje hjemmeside",
+        "description": "Et interaktivt udstillingsvindue af mine projekter og færdigheder, med glatte animationer og et moderne design"
+      }
+    },
+    "contact": {
+      "title": "Lad os arbejde sammen",
+      "description": "Jeg er altid åben for nye muligheder og spændende projekter. Du er velkommen til at tage fat!",
+      "button": "Tag kontakt"
+    }
+  },
+  "about": {
+    "title": "Om mig",
+    "profile": {
+      "title": "Full Stack-udvikler",
+      "location": "Midtjylland, DK",
+      "description": "Brænder for at skabe innovative webløsninger.",
+      "experience": "5+ år Exp",
+      "education": "N/A"
+    },
+    "summery": {
+      "title": "Professionel resumé",
+      "content": "Med over 5 års erfaring i fuld stack udvikling, er jeg specialiseret i at bygge skalerbare webapplikationer ved hjælp af TypeScript, Next.js og cloud-teknologier. Jeg brænder for ren kode, brugercentreret design og kontinuerlig læring."
+    },
+    "focus": {
+      "title": "Nuværende fokus",
+      "content": "I øjeblikket er jeg fokuseret på at udvide min viden inden for AI og maskinlæring, især i deres applikationer til webudvikling. Jeg udforsker også serverløse arkitekturer og edge computing for at forbedre ydeevnen og skalerbarheden af webapplikationer."
+    },
+    "interests": {
+      "title": " Mine interesser",
+      "content": {
+        "interest1": "Webudvikling",
+        "interest2": "AI",
+        "interest3": "Cloud Computing"
+      }
+    },
+    "hobbies": {
+      "title": "Mine hobbyer",
+      "content": {
+        "hobby1": "Rejse",
+        "hobby2": "Madlavning",
+        "hobby3": "Programmering"
+      }
+    },
+    "fun-facts": {
+      "title": "Sjove fakta",
+      "content": {
+        "fact1": "Ingen sjove fakta lige nu"
+      }
+    },
+    "philosophy": {
+      "title": "Personlig Filosofi",
+      "content": "Jeg tror på kontinuerlig læring, problemløsning gennem kreativitet og at have en positiv indflydelse gennem teknologi."
+    },
+    "faq": {
+      "title": "FAQ",
+      "content": {
+        "faq1": {
+          "question": "Hvad er dit foretrukne programmeringssprog?",
+          "answer": "JavaScript (men jeg elsker også TypeScript og Lua)."
+        },
+        "faq2": {
+          "question": "Hvad arbejder du på lige nu?",
+          "answer": "Jeg dykker i øjeblikket dybere ned i kunstig intelligens og maskinlæring og fokuserer på, hvordan de kan forbedre webudvikling."
+        },
+        "faq3": {
+          "question": "Hvordan kan jeg komme i kontakt med dig?",
+          "answer": "Du er velkommen til at kontakte mig via min kontaktformular eller via LinkedIn."
+        }
+      }
+    }
+  },
+  "projects": {
+    "pageTitle": "Mine projekter",
+    "searchPlaceholder": "Søg efter projekter...",
+    "tags": "Tags",
+    "visitSite": "Besøg webstedet",
+    "viewCode": "Se kode",
+    "projectDescriptions": {
+      "aniVue": {
+        "title": "AniVue",
+        "description": "Fordyb dig i den fængslende anime-verden med AniVue. Denne filmiske portal tilbyder et stort bibliotek af japansk animation, med personlige anbefalinger og en elegant, brugervenlig grænseflade. Oplev fremtiden for anime-streaming."
+      },
+      "comicSphere": {
+        "title": "ComicSphere",
+        "description": "Styrk din tegneserievision med ComicSphere, en omfattende platform til digital tegneserieoprettelse og distribution. Fra intuitive designværktøjer til funktioner for samfundsengagement, ComicSphere giver alt, hvad du behøver for at bringe dine tegneseriedrømme ud i livet og dele dem med verden."
+      },
+      "webdemands": {
+        "title": "WebDemands",
+        "description": "Velkommen til WebDemand, hvor dine digitale ideer bliver til virkelighed. Vores platform forbinder visionære kunder med dygtige udviklere, hvilket sikrer, at dine webprojekter bringes til live med præcision og kreativitet. Oplev fremtiden for webudviklingssamarbejde."
+      },
+      "portfolio": {
+        "title": "Portefølje hjemmeside",
+        "description": "Du kigger på det! Denne interaktive udstilling af mit arbejde demonstrerer min passion for at skabe engagerende digitale oplevelser. Med glatte animationer, responsivt design og et kurateret udvalg af mine bedste projekter, er denne portfolio et vidnesbyrd om mine evner som webudvikler."
+      },
+      "rtspackage": {
+        "title": "Roblox-TS Package Finder",
+        "description": "Opdag og udforsk pakker fra @rbxts-omfanget"
+      }
+    }
+  },
+  "resume": {
+    "pageTitle": "Mit CV",
+    "workExperience": {
+      "title": "Erhvervserfaring",
+      "content": {
+        "job1": {
+          "jobtitle": "Full Stack-udvikler",
+          "company": "Kukiku",
+          "period": "2016 - Nuværende",
+          "work": {
+            "responsibility1": "Udvikle og vedligeholde webapplikationer ved hjælp af moderne teknologier",
+            "responsibility2": "Implementer responsive designs og optimer applikationens ydeevne",
+            "responsibility3": "Deltage i kodegennemgange og vejlede juniorudviklere"
+          }
+        }
+      }
+    },
+    "education": {
+      "title": "Undervisning",
+      "content": {
+        "education1": {
+          "degree": "Bare en tilfældig teknisk skole",
+          "institution": "Videndjurs",
+          "period": "2024 – Nuværende (igangværende)",
+          "description": "Lærer i øjeblikket ting, med fokus på software engineering og webteknologier"
+        }
+      }
+    },
+    "skills": {
+      "title": "Færdigheder",
+      "sections": {
+        "programmingLanguages": "Programmeringssprog",
+        "frameworksLibraries": "Rammer og biblioteker",
+        "databases": "Databaser",
+        "toolsTechnologies": "Værktøjer og teknologier"
+      }
+    },
+    "certifications": {
+      "title": "Certificeringer og præstationer",
+      "content": {
+        "certificate1": {
+          "title": "Ingen",
+          "issuer": "Ingen",
+          "date": "N/A",
+          "description": "Jeg ved ikke, hvorfor jeg allerede har tilføjet dette afsnit"
+        }
+      }
+    }
+  },
+  "contact": {
+    "title": "Tag kontakt",
+    "description": "Jeg vil meget gerne høre fra dig! Uanset om du har et projekt i tankerne eller bare vil sige hej, er du velkommen til at kontakte os.",
+    "info": {
+      "title": "Kontaktoplysninger",
+      "description": "Sådan kan du kontakte mig direkte",
+      "mail": "julian@kukiku.org",
+      "phone": "shhhh hemmelighed",
+      "location": "Midtjylland, DK"
+    },
+    "form": {
+      "title": "Send en besked",
+      "description": "Udfyld formularen nedenfor, så vender jeg tilbage til dig hurtigst muligt",
+      "name": {
+        "title": "Navn",
+        "placeholder": "Dit navn",
+        "error": "Navnet skal være på mindst 2 tegn."
+      },
+      "email": {
+        "title": "E-mail",
+        "placeholder": "Din e-mail",
+        "error": "Indtast venligst en gyldig e-mailadresse."
+      },
+      "subject": {
+        "title": "Emne",
+        "placeholder": "Beskedens emne",
+        "error": "Emnet skal være på mindst 5 tegn."
+      },
+      "message": {
+        "title": "Besked",
+        "placeholder": "Din besked",
+        "error": "Beskeden skal være på mindst 10 tegn."
+      },
+      "submit": {
+        "button": "Send besked",
+        "sending": "Sender..."
+      }
+    },
+    "popup": {
+      "success": {
+        "title": "Besked sendt!",
+        "description": "Tak for din besked. Jeg vender snart tilbage til dig."
+      },
+      "error": {
+        "title": "Fejl",
+        "description": "Kunne ikke sende besked. Prøv venligst igen senere."
+      }
+    }
+  }
 }

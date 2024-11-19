@@ -27,6 +27,7 @@ export function LanguageSelector() {
   const languages: Language[] = [
     { code: "en", label: t("languages.en"), flag: "GB" }, // Dynamically translated
     { code: "da", label: t("languages.da"), flag: "DK" }, // Dynamically translated
+    { code: "de", label: t("languages.de"), flag: "DE" }, // Dynamically translated
   ];
 
   useEffect(() => {
