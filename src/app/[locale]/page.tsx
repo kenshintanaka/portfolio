@@ -38,7 +38,7 @@ export default function Home() {
     }, 100);
 
     return () => clearInterval(typingInterval);
-  }, []);
+  }, [fullText]);
 
   useEffect(() => {
     if (isPC && backgroundRef.current) {
