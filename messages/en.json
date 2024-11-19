@@ -1,0 +1,231 @@
+{
+  "Navbar": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "resume": "Resume",
+    "contact": "Contact"
+  },
+  "footer": {
+    "copyright": "All rights reserved"
+  },
+  "languageSelector": {
+    "title": "Select Language",
+    "languages": {
+      "en": "English",
+      "da": "Danish"
+    }
+  },
+  "themeSelector": {
+    "title": "Toggle theme",
+    "themes": {
+      "system": "System",
+      "dark": "Dark",
+      "light": "Light"
+    }
+  },
+  "home": {
+    "title": "Hello, I'm Julian Maggio",
+    "message": "I'm a Full Stack Developer",
+    "description": "Passionate about creating innovative web solutions and turning ideas into reality through code.",
+    "button1": "View Projects",
+    "button2": "View Resume",
+    "project-title": "Featured Projects",
+    "viewsite": "View Site",
+    "projects": {
+      "project1": {
+        "title": "AniVue",
+        "description": "A sleek anime streaming platform with a vast library and personalized recommendations"
+      },
+      "project2": {
+        "title": "ComicSphere",
+        "description": "A feature-rich SaaS for comic creators to host, manage, and monetize their digital  comics"
+      },
+      "project3": {
+        "title": "Portfolio Website",
+        "description": "An interactive showcase of my projects and skills, featuring smooth animations and a modern design"
+      }
+    },
+    "contact": {
+      "title": "Let's Work Together",
+      "description": "I'm always open to new opportunities and exciting projects. Feel free to reach out!",
+      "button": "Get in Touch"
+    }
+  },
+  "about": {
+    "title": "About me",
+    "profile": {
+      "title": "Full Stack Developer",
+      "location": "Midtjylland, DK",
+      "description": "Passionate about creating innovative web solutions.",
+      "experience": "5+ Years Exp",
+      "education": "N/A"
+    },
+    "summery": {
+      "title": "Professional Summary",
+      "content": "With over 5 years of experience in full stack development, I specialize in building scalable web applications using TypeScript, Next.js, and cloud technologies. I'm passionate about clean code, user-centric design, and continuous learning."
+    },
+    "focus": {
+      "title": "Current Focus",
+      "content": "Currently, I'm focused on expanding my knowledge in AI and machine learning, particularly in their applications to web development. I'm also exploring serverless architectures and edge computing to enhance the performance and scalability of web applications."
+    },
+    "interests": {
+      "title": " My Interests",
+      "content": {
+        "interest1": "Web Development",
+        "interest2": "AI",
+        "interest3": "Cloud Computing"
+      }
+    },
+    "hobbies": {
+      "title": "My Hobbies",
+      "content": {
+        "hobby1": "Travel",
+        "hobby2": "Cooking",
+        "hobby3": "Programming"
+      }
+    },
+    "fun-facts": {
+      "title": "Fun Facts",
+      "content": {
+        "fact1": "No fun facts for now"
+      }
+    },
+    "philosophy": {
+      "title": "Personal Philosophy",
+      "content": "I believe in continuous learning, problem-solving through creativity, and making a positive impact through technology."
+    },
+    "faq": {
+      "title": "FAQ",
+      "content": {
+        "faq1": {
+          "question": "Whats your favorite programming language?",
+          "answer": "JavaScript (but I also love TypeScript and Lua)."
+        },
+        "faq2": {
+          "question": "What are you working on right now?",
+          "answer": "I'm currently diving deeper into AI and machine learning, focusing on how they can enhance web development."
+        },
+        "faq3": {
+          "question": "How can I get in touch with you?",
+          "answer": "Feel free to reach out via my contact form or through LinkedIn."
+        }
+      }
+    }
+  },
+  "projects": {
+    "pageTitle": "My Projects",
+    "searchPlaceholder": "Search projects...",
+    "tags": "Tags",
+    "visitSite": "Visit Site",
+    "viewCode": "View Code",
+    "projectDescriptions": {
+      "aniVue": {
+        "title": "AniVue",
+        "description": "Immerse yourself in the captivating world of anime with AniVue. This cinematic portal offers a vast library of Japanese animation, featuring personalized recommendations and a sleek, user-friendly interface. Experience the future of anime streaming."
+      },
+      "comicSphere": {
+        "title": "ComicSphere",
+        "description": "Empower your comic vision with ComicSphere, a comprehensive platform for digital comic creation and distribution. From intuitive design tools to community engagement features, ComicSphere provides everything you need to bring your comic dreams to life and share them with the world."
+      }
+    }
+  },
+  "resume": {
+    "pageTitle": "My Resume",
+    "workExperience": {
+      "title": "Work Experience",
+      "content": {
+        "job1": {
+          "jobtitle": "Full Stack Developer",
+          "company": "Kukiku",
+          "period": "2016 - Present",
+          "work": {
+            "responsibility1": "Develop and maintain web applications using modern technologies",
+            "responsibility2": "Implement responsive designs and optimize application performance",
+            "responsibility3": "Participate in code reviews and mentor junior developers"
+          }
+        }
+      }
+    },
+    "education": {
+      "title": "Education",
+      "content": {
+        "education1": {
+          "degree": "Just some random tech school",
+          "institution": "Videndjurs",
+          "period": "2024 - Present (Ongoing)",
+          "description": "Currently learning stuff, focusing on software engineering and web technologies"
+        }
+      }
+    },
+    "skills": {
+      "title": "Skills",
+      "sections": {
+        "programmingLanguages": "Programming Languages",
+        "frameworksLibraries": "Frameworks & Libraries",
+        "databases": "Databases",
+        "toolsTechnologies": "Tools & Technologies"
+      }
+    },
+    "certifications": {
+      "title": "Certifications & Achievements",
+      "content": {
+        "certificate1": {
+          "title": "None",
+          "issuer": "None",
+          "date": "N/A",
+          "description": "I don't know why I even added this section already"
+        }
+      }
+    }
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "description": "I'd love to hear from you! Whether you have a project in mind or just want to say hello, feel free to reach out.",
+    "info": {
+      "title": "Contact Information",
+      "description": "Here's how you can reach me directly",
+      "mail": "julian@kukiku.org",
+      "phone": "shhhh secret",
+      "location": "Midtjylland, DK"
+    },
+    "form": {
+      "title": "Send a Message",
+      "description": "Fill out the form below and I'll get back to you as soon as possible",
+      "name": {
+        "title": "Name",
+        "placeholder": "Your name",
+        "error": "Name must be at least 2 characters."
+      },
+      "email": {
+        "title": "Email",
+        "placeholder": "Your email",
+        "error": "Please enter a valid email address."
+      },
+      "subject": {
+        "title": "Subject",
+        "placeholder": "Message subject",
+        "error": "Subject must be at least 5 characters."
+      },
+      "message": {
+        "title": "Message",
+        "placeholder": "Your message",
+        "error": "Message must be at least 10 characters."
+      },
+      "submit": {
+        "button": "Send Message",
+        "sending": "Sending..."
+      }
+    },
+    "popup": {
+      "success": {
+        "title": "Message sent!",
+        "description": "Thank you for your message. I'll get back to you soon."
+      },
+      "error": {
+        "title": "Error",
+        "description": "Failed to send message. Please try again later."
+      }
+    }
+  }
+}
